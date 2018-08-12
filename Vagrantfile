@@ -18,7 +18,7 @@ Vagrant.configure("2") do |vagrant|
 
   # Synced Folder
   vagrant.vm.synced_folder ".", "/home/vagrant/DevBox", type: "virtualbox", mount_options: ["dmode=775", "fmode=774"]
- 
+
   # Provision
   vagrant.vm.provision "shell", inline: <<-SHELL
     hostname #{Config::NAME}
