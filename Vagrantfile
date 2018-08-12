@@ -17,13 +17,14 @@ Vagrant.configure("2") do |vagrant|
   vagrant.vm.network "private_network", ip: Config::IP
 
   # Synced Folder
-  vagrant.vm.synced_folder ".", "/home/vagrant/files", type: "virtualbox", mount_options: ["dmode=775", "fmode=774"]
+  vagrant.vm.synced_folder ".", "/home/vagrant/DevBox", type: "virtualbox", mount_options: ["dmode=775", "fmode=774"]
  
   # Provision
   vagrant.vm.provision "shell", inline: <<-SHELL
     hostname #{Config::NAME}
     pacman -Syu --noconfirm
     pacman -S --noconfirm bash git tmux vim
-    HOME=/home/vagrant /home/vagrant/files/dotfiles/setup.sh
+    pacman -S --noconfirm nodejs npm
+    HOME=/home/vagrant /home/vagrant/DevBox/dotfiles/setup.sh
   SHELL
 end
