@@ -1,0 +1,9 @@
+*
+
+!.gitignore
+!.gitmodules
+
+!Vagrantfile
+!config.rb
+
+!dotfiles
