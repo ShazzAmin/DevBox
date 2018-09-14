@@ -19,7 +19,7 @@ Vagrant.configure("2") do |vagrant|
     ip: Config::IP
   )
 
-  # Synced Folders
+  # Shared Folders
   folders = [{ name: "DevBox", path: "." }]
   folders.concat(Config::FOLDERS)
   Config::FOLDERS_PARENTS.each do |folders_parent|
