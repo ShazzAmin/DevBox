@@ -11,6 +11,7 @@ Vagrant.configure("2") do |vagrant|
 
   # Box
   vagrant.vm.box = "archlinux/archlinux"
+  vagrant.vm.box_version = "2018.08.05"
   vagrant.vm.box_check_update = true
 
   # Network
